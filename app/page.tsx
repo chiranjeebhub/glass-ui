@@ -1,100 +1,73 @@
-import Image from "next/image";
+import Link from "next/link";
+import { GlassButton, GlassCard } from "@/components/ui";
+import { ArrowRight, Code, Palette, Zap } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 overflow-hidden -mt-16">
+      <div className="max-w-6xl w-full text-center">
+        <h1 className="text-6xl font-bold text-slate-800 dark:text-white mb-6">
+          Glassmorphic UI Library
+        </h1>
+        <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto">
+          A modern, beautiful, and accessible UI library with a frosted glass
+          design. Create stunning interfaces with ease.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <Link href="/docs">
+            <GlassButton size="lg" className="flex items-center gap-2">
+              Explore Components <ArrowRight className="w-4 h-4" />
+            </GlassButton>
+          </Link>
+          <Link
+            href="https://github.com/yourusername/glassmorphic-ui"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <GlassButton
+              variant="outline"
+              size="lg"
+              className="flex items-center gap-2"
+            >
+              View on GitHub <Code className="w-4 h-4" />
+            </GlassButton>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="grid md:grid-cols-3 gap-8">
+          <GlassCard className="p-6 flex flex-col items-center text-center">
+            <Zap className="w-12 h-12 text-yellow-500 mb-4" />
+            <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-2">
+              Lightning Fast
+            </h2>
+            <p className="text-slate-600 dark:text-slate-300">
+              Optimized for performance, ensuring smooth interactions and quick
+              load times.
+            </p>
+          </GlassCard>
+          <GlassCard className="p-6 flex flex-col items-center text-center">
+            <Palette className="w-12 h-12 text-purple-500 mb-4" />
+            <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-2">
+              Customizable
+            </h2>
+            <p className="text-slate-600 dark:text-slate-300">
+              Easily adapt the components to match your brand's unique style and
+              color scheme.
+            </p>
+          </GlassCard>
+          <GlassCard className="p-6 flex flex-col items-center text-center">
+            <Code className="w-12 h-12 text-green-500 mb-4" />
+            <h2 className="text-2xl font-semibold text-slate-800 dark:text-white mb-2">
+              Developer Friendly
+            </h2>
+            <p className="text-slate-600 dark:text-slate-300">
+              Built with React and TypeScript, offering a smooth development
+              experience.
+            </p>
+          </GlassCard>
+        </div>
+      </div>
+      <footer className="mt-16 text-slate-600 dark:text-slate-400 text-sm">
+        © 2023 Glassmorphic UI. All rights reserved.
       </footer>
     </div>
   );
